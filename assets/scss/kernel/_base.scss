@@ -1,0 +1,131 @@
+/* 
+    常用模組化CSS 2017/09
+    Author     : ALTsai
+*/
+/*FLOAT*/
+.floatR {
+    float: right;
+}
+.floatL {
+    float: left;
+}
+.affix {
+  position: fixed;
+}
+/*POSITION*/
+.absolute {
+    position: absolute;
+}
+.relative {
+    position:relative;
+}
+/*FONT ALIGN*/
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+/*DISPLAY*/
+.inline-block {
+    display: inline-block;
+}
+.inline {
+    display: inline;
+}
+.hide,.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.cursor {    
+    cursor:pointer;
+}
+
+
+$num: 5px;
+/* MARGINS */
+.m {
+    &-n {margin: 0; }
+    &-l {
+        &-n {margin-left: 0; }
+        &-n-xs { margin-left: - $num;}
+        &-n-sm { margin-left: - $num * 2;}
+        &-n-md { margin-left: - $num * 3;}
+        &-n-lg { margin-left: - $num * 4;}
+        &-n-xl { margin-left: - $num * 5;}
+        &-xs { margin-left: $num;}
+        &-sm { margin-left: $num * 2;}
+        &-md { margin-left: $num * 3;}
+        &-lg { margin-left: $num * 4;}
+        &-xl { margin-left: $num * 5;}
+    }
+    &-r {
+        &-n {margin-right: 0; }
+        &-n-xs { margin-right: - $num;}
+        &-n-sm { margin-right: - $num * 2;}
+        &-n-md { margin-right: - $num * 3;}
+        &-n-lg { margin-right: - $num * 4;}
+        &-n-xl { margin-right: - $num * 5;}
+        &-xs { margin-right: $num;}
+        &-sm { margin-right: $num * 2;}
+        &-md { margin-right: $num * 3;}
+        &-lg { margin-right: $num * 4;}
+        &-xl { margin-right: $num * 5;}
+    }
+    &-t {
+        &-n {margin-top: 0; }
+        &-n-xs { margin-top: - $num;}
+        &-n-sm { margin-top: - $num * 2;}
+        &-n-md { margin-top: - $num * 3;}
+        &-n-lg { margin-top: - $num * 4;}
+        &-n-xl { margin-top: - $num * 5;}
+        &-xs { margin-top: $num;}
+        &-sm { margin-top: $num * 2;}
+        &-md { margin-top: $num * 3;}
+        &-lg { margin-top: $num * 4;}
+        &-xl { margin-top: $num * 5;}
+    }
+    &-b {
+        &-n {margin-bottom: 0; }
+        &-n-xs { margin-bottom: - $num;}
+        &-n-sm { margin-bottom: - $num * 2;}
+        &-n-md { margin-bottom: - $num * 3;}
+        &-n-lg { margin-bottom: - $num * 4;}
+        &-n-xl { margin-bottom: - $num * 5;}
+        &-xs { margin-bottom: $num;}
+        &-sm { margin-bottom: $num * 2;}
+        &-md { margin-bottom: $num * 3;}
+        &-lg { margin-bottom: $num * 4;}
+        &-xl { margin-bottom: $num * 5;}
+    }
+}
+
+/* PADDINGS */
+.p {
+    &-n {padding: 0; }
+    &-xs { padding: $num;}
+    &-sm { padding: $num * 2;}
+    &-md { padding: $num * 3;}
+    &-lg { padding: $num * 4;}
+    &-xl { padding: $num * 5;}
+    
+    &-w {
+        &-xs { padding: 0 $num;}
+        &-sm { padding: 0 $num * 2;}
+        &-md { padding: 0 $num * 3;}
+        &-lg { padding: 0 $num * 4;}
+        &-xl { padding: 0 $num * 5;}
+    }
+    &-h {
+        &-xs { padding: $num 0;}
+        &-sm { padding: $num * 2 0;}
+        &-md { padding: $num * 3 0;}
+        &-lg { padding: $num * 4 0;}
+        &-xl { padding: $num * 5 0;}
+    }
+}

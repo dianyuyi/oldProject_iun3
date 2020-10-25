@@ -1,0 +1,37 @@
+
+.btn {
+    padding: 6px 15px;
+    
+    /*background*/
+    &-default {
+        @include btn-bg(#ddd) ;
+    }
+    &-primary {
+        color: #fff;
+        @include btn-bg($third) ;
+    }
+    //profile btn
+    &-block {
+        display: block;
+        width: 100%;
+    }
+    &-success {
+        @include btn-bg(#8fc647) ;
+    }
+    &-cancel {
+        @include btn-bg(#888) ;
+    }
+    
+    /*圓角*/
+    &-radius {
+        @include border-radius(8px);
+    }
+    &-n-radius {
+        @include border-radius(0);
+    }
+    
+    /*兩顆排列*/
+    &-half {
+        width: 50%;
+    }
+}

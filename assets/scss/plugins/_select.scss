@@ -1,0 +1,64 @@
+
+.select {
+    
+    /* --------------------------------------------------
+      VARIABLE
+     -------------------------------------------------- */        
+    $select-height:48px;//select高度
+    $select-bg:$transparent;
+    $select-border-color:$light;
+    
+    &-group {
+        width: 100%;
+        margin-bottom: 22px;
+        display: inline-flex;
+        &.age {
+            @media (max-width: 375px){
+                display: inline-block;
+            }
+        }
+        select.select-age {
+            background-color: $select-bg;
+            border: 1px solid $select-border-color;
+            height: $select-height;
+            /*border-radius: 4px;*/
+            padding: 0 0 0 150px;
+            @media (max-width: 768px){
+                padding: 0 0 0 100px;
+            }
+            @media (max-width: 414px){
+                padding: 0 0 0 50px;
+            }
+            @media (max-width: 375px){
+                padding: 0 0 0 130px;
+            }
+        }
+        select.select-normal {
+            background-color: $select-bg;
+            border: 1px solid $select-border-color;
+            height: $select-height;
+            /*border-radius: 4px;*/
+            padding: 0 0 0 450px;
+            @media (max-width: 768px){
+                padding: 0 0 0 325px;
+            }
+            @media (max-width: 414px){
+                padding: 0 0 0 145px;
+            }
+            @media (max-width: 375px){
+                padding: 0 0 0 125px;
+            }
+        }
+    }
+    //前面包含icon圖檔的組合
+    &-input-group {
+        position: absolute;
+        height: $select-height;
+        line-height: $select-height;
+        left: 75px;
+        
+        >img {
+            width: 20px;
+        }
+    }
+}

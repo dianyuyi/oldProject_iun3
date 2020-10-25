@@ -1,0 +1,78 @@
+#explore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .list-table {
+        display: block;
+        width: 100%;
+        padding: 0 2em;
+        
+        .service {
+			display: flex;
+			height: 100%;
+			margin: 1.5em auto;
+			justify-content: center;
+			align-items: center;
+            @include border-radius(5px);
+            border: 1px solid #747474;
+			border-bottom: 3px double #747474;
+            overflow: hidden;
+
+			.tab-list {
+				flex: 1;
+				padding: 5px;
+				text-align: center;
+				vertical-align: middle;
+                color: #747474;
+                &.name {
+                    background-color: #747474;
+                    color: #fff;
+                }
+			}
+		}
+        .group {
+            display: table;
+            width: 100%;
+            text-align: center;
+            color: $primary;
+            padding: 0.5em 0;
+            border: 1px solid $primary;
+            border-bottom: none;
+            &:last-child {
+                border-bottom: 1px solid $primary;
+            }
+
+            & p {
+                margin: 0;
+                font-size: 18px;
+            }
+
+            .data {
+                display: table-cell;
+                
+                width: 50%;
+                
+                &.name {
+                    // width: 40%;
+                }
+                &.content {
+                    // width: 60%;
+                    // text-align: left;
+                    // padding-left: 3em;
+                    border-left: 1px solid $primary;
+                }
+            }
+        }
+    }
+    .btn-close {
+        width: 30vw;
+        margin: 1.5em 0;
+        color: #fff;
+        letter-spacing: 2px;
+        text-align: center;
+        padding: 0.25em 1em;
+        @include border-radius(5px);
+    }
+}

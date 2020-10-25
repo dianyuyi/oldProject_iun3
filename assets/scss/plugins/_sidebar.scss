@@ -1,0 +1,141 @@
+
+.sidebar-left {
+    
+    /* --------------------------------------------------
+      URL
+     -------------------------------------------------- */
+    $image-location: img; //最上層資料夾
+    $folder-location: menu; //類別資料夾
+    
+    
+    background: $sidebar-bg;
+    
+    //Header
+    .scrollable-header {
+        padding: 30px 0;
+        border-bottom: 1px solid #444;
+        margin-bottom: 10px;
+        
+        img { width: 80px; }
+    }
+    
+    a.list-group-item {
+        background: $sidebar-bg;
+        padding:10px 17px;
+        &:hover {
+            background: $sidebar-bg;
+        }
+
+        //FONT
+        span {
+            &::hover{
+                color: white;
+            }
+            
+            //ICON
+            &::before {
+                @include background-image(contain);
+                content: "";
+                display: inline-block;
+                position: relative;
+                padding: 10px;
+                margin:0 34px 0 0;
+                vertical-align: text-bottom;
+            }
+        }
+        &:nth-child(1) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/dashboard_w.svg);
+        }
+        &:nth-child(2) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/activity_w.svg);
+        }
+        &:nth-child(3) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/history_w.svg);
+        }
+        &:nth-child(5) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/calendar_w.svg);
+        }
+        &:nth-child(6) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/setting_w.svg);
+        }
+        &:nth-child(7) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/product_w.svg);
+        }
+        &:nth-child(8) span::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/logout_w.svg);
+        }
+        //ICON ACTIVE
+        &.active,&.active:hover {
+            background: $sidebar-bg;
+
+            &:nth-child(1) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/dashboard_g.svg);
+            }
+            &:nth-child(2) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/activity_g.svg);
+            }
+            &:nth-child(3) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/history_g.svg);
+            }
+            &:nth-child(5) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/calendar_g.svg);
+            }
+            &:nth-child(6) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/setting_g.svg);
+            }
+            &:nth-child(7) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/product_g.svg);
+            }
+            &:nth-child(8) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/logout_g.svg);
+            }
+            span {
+                color: $sidebar-active-color;
+            }
+        }
+    }
+    .dropdown-sidebarmenu {
+        padding: 0 calc(43px - 17px);
+        
+        a.list-group-item {
+            &:nth-child(1) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/treadmill_w.svg);
+            }
+            &:nth-child(2) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/et_w.svg);
+            }
+            &:nth-child(3) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/eb_w.svg);
+            }
+            &:nth-child(4) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/m_w.svg);
+            }
+            &:nth-child(5) span::before{
+                background-image: url(../#{$image-location}/#{$folder-location}/spinning_w.svg);
+            }
+
+            //ICON ACTIVE
+            &.active,&.active:hover {
+                &:nth-child(1) span::before{
+                    background-image: url(../#{$image-location}/#{$folder-location}/treadmill_g.svg);
+                }
+                &:nth-child(2) span::before{
+                    background-image: url(../#{$image-location}/#{$folder-location}/et_g.svg);
+                }
+                &:nth-child(3) span::before{
+                    background-image: url(../#{$image-location}/#{$folder-location}/eb_g.svg);
+                }
+                &:nth-child(4) span::before{
+                    background-image: url(../#{$image-location}/#{$folder-location}/m_g.svg);
+                }
+                &:nth-child(5) span::before{
+                    background-image: url(../#{$image-location}/#{$folder-location}/spinning_g.svg);
+                }
+                span {
+                    color: $sidebar-active-color;
+                }
+            }
+        }
+    }
+
+}

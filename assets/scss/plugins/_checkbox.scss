@@ -1,0 +1,30 @@
+
+.checkbox-group {
+    
+    input[type="checkbox"] {
+        display: none;
+        
+        //勾勾選取後樣式
+        &:checked+label:before {
+            content: "\f374";
+            color: $form-checkbox-active-color;
+        }
+    }
+    label {
+        position: relative;
+        cursor: pointer;
+        font-weight: normal;
+        margin:0;
+        
+        //勾勾樣式
+        &:before {
+            content: "\f372";
+            font-family: "Ionicons";
+            position: relative;
+            font-size: 20px;
+            color: $form-checkbox-color;
+            top: 2px;
+            padding-right: 10px;
+        }
+    }
+}

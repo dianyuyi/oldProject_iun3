@@ -1,0 +1,221 @@
+
+/* --------------------------------------------------
+    MIXIN EDIT :2018/03
+    Author     : AL
+ -------------------------------------------------- */
+/*box-shadow*/
+@mixin box_shadow ($level) {
+
+    @if $level == 1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    } @else if $level == 2 {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    } @else if $level == 3 {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    } @else if $level == 4 {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    } @else if $level == 5 {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+}
+/*btn background*/
+@mixin btn-bg($bg) {
+  background: $bg;
+  border-color: $bg;
+  &:hover {
+    border-color: $bg;
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    border-color: $bg;
+    background:darken($bg,25%);
+  } 
+}
+/*修改input color*/
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+/*DIV 屬性*/
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+/*背景屬性*/
+@mixin background-image($background-size : cover) {
+    background-size: $background-size;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*背景漸層*/
+@mixin background-gradient($bgcolor1,$bgcolor2) {
+    background-image: -moz-linear-gradient($bgcolor1,$bgcolor2);
+    background-image: -ms-linear-gradient($bgcolor1,$bgcolor2);
+    background-image: -o-linear-gradient($bgcolor1,$bgcolor2);
+    background-image: -webkit-linear-gradient($bgcolor1,$bgcolor2);
+    background-image: linear-gradient($bgcolor1,$bgcolor2);
+}
+/*物件置中*/
+@mixin translate() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+/*圓角屬性*/
+@mixin border-radius($lt) {
+    -webkit-border-radius: $lt $lt $lt $lt;
+    -moz-border-radius: $lt $lt $lt $lt;
+    border-radius: $lt $lt $lt $lt;
+}
+@mixin border-radius-detail($lt,$lr,$lb,$ll) {
+    -webkit-border-radius: $lt $lr $lb $ll;
+    -moz-border-radius: $lt $lr $lb $ll;
+    border-radius: $lt $lr $lb $ll;
+}
+/*文字屬性疊加、我不常用會忘記ＸＤ*/
+@mixin font-type($font-size, $line-height, $spacing , $weight ,$margin) {
+    font-size: $font-size;
+    font-size: $font-size / 10px + rem;
+    line-height: $line-height;
+    letter-spacing: $spacing;
+    font-weight: $weight;
+    margin: $margin;
+}
+/*字級換算*/
+@mixin font-size($font-size) {
+    font-size: $font-size;
+    font-size: $font-size / 10px + rem;
+}
+/*頁籤*/
+@mixin tab-type($btn-bg, $btn-hover-bg, $padding, $spacing) {
+    .tabs {
+        a {
+            background-color: $btn-bg;
+            padding: $padding;
+            cursor: pointer;
+            
+            &:first-child {
+                margin-right: $spacing +px;
+            }
+            &:hover,&.active {
+                background-color: $btn-hover-bg;
+            }
+            
+            @media screen and (max-width: 640px) {
+                width: 100%;
+                padding: $spacing * 2 +px;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        > li{display:none;}
+    }
+}
+
+
+/*三*/
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$burger-click-size: 80px;
+$burger-width: 30px;
+$burger-height: 10px;
+$menuItems: 7;
+$burger-Color :#fff;
+@mixin burger{
+    .burger-container {
+        position: relative;
+        display: inline-block;
+        height: $burger-click-size;
+        width: $burger-click-size;
+        cursor: pointer;
+        transform: rotate(0deg);
+        transition: all 0.3s $cubic;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        #burger {
+            width: $burger-width;
+            height: $burger-height;
+            position: relative;
+            display: block;
+            margin: -4px auto 0;
+            top: 50%;
+            .bar {
+                width: 100%;
+                height: 1px;
+                display: block;
+                position: relative;
+                background: $burger-Color;
+                transition: all 0.3s $cubic;
+                transition-delay: 0s;
+                &.topBar {
+                    transform: translateY(0px) rotate(0deg);
+                }
+                &.btmBar {
+                    transform: translateY($burger-height) rotate(0deg);
+                }
+            }
+        }
+    }
+}
+@mixin burger-active{
+    .burger-container {
+        transform: rotate(90deg);
+        #burger {
+            .bar {
+                transition: all 0.4s $cubic;
+                transition-delay: 0.2s;
+                &.topBar {
+                    transform: translateY(4px) rotate(45deg);
+                }
+                &.btmBar {
+                    transform: translateY(3px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+@mixin burger-menu{
+    .block { display: block !important;}
+    ul.menu {
+        /*display: block;*/
+        display: none;
+        /*padding: 0px 48px 0;*/
+        li.menu-item {
+            transform: scale(1.15) translateY(-30px);
+            opacity: 0;
+            transition: transform 0.5s $cubic, opacity 0.5s $cubic;
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.56 - ($i * 0.03)}s;
+                }
+            }
+            a {
+                display: block;
+                font-weight: 100;
+                font-size: 22px;
+                line-height: 6rem;
+                width: 100%;
+            }
+        }
+    }
+}
+@mixin burger-menu-active{
+    ul.menu {
+        li.menu-item {
+            transform: scale(1) translateY(0px);
+            opacity: 1;
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.05 * $i+0.2}s;
+                }
+            }
+        }
+    }
+}

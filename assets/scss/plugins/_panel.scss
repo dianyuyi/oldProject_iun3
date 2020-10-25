@@ -1,0 +1,83 @@
+
+.panel {
+    /* --------------------------------------------------
+        VARIABLE 變數
+     -------------------------------------------------- */   
+    //COLOR
+    $primary: #508447; //主色-深綠色
+    $dark: #3a3a3a; //黑色
+    $light: #e9e9e9; //深灰背景色
+    
+    //SIZE
+    $panel-head-sm-height: 37px;
+    $panel-head-md-height: 46px;
+    $panel-head-lg-height: 54px;
+    
+    /* --------------------------------------------------
+        Background 背景填色樣式
+     -------------------------------------------------- */   
+    
+    &-primary { 
+        background-color:$primary;  
+        border: transparent;
+    }
+    &-dark { 
+        background-color:$dark; 
+        border: transparent;
+    }
+    &-light { 
+        background-color:$light; 
+        border: transparent;
+    }
+    &-white { 
+        background-color:white; 
+        border: transparent;
+    }
+    
+    /* --------------------------------------------------
+        Accordion 折疊樣式
+     -------------------------------------------------- */   
+    
+    margin: 0;
+    border-radius: 0;
+    /*border: 1px solid $border-color;*/
+    
+    &-bar {
+        border-width: 0 0 1px 0;
+        border-color: #ddd;
+    }
+    &-heading {
+        border-radius: 0;
+        padding: 0 20px;
+        
+        .icon {
+            opacity: .8;
+        }
+    }
+    &-sm {
+        min-height: $panel-head-sm-height;
+        line-height: $panel-head-sm-height;
+        
+        .icon {
+            top: 8px;
+        }
+    }
+    &-md {
+        min-height: $panel-head-md-height;
+        line-height: $panel-head-md-height;
+    }
+    &-lg {
+        min-height: $panel-head-lg-height;
+        line-height: $panel-head-lg-height;
+        
+        .icon {
+            top: 15px;
+        }
+    }
+    &-radius {
+        @include border-radius-detail (0,0,5px,5px);
+    }
+    &-shadow {
+        @include box-shadow(3);
+    }
+}

@@ -1,0 +1,139 @@
+
+/* --------------------------------------------------
+ GLOBAL
+ -------------------------------------------------- */
+
+@import "kernel/rwd";//RWD
+@import "kernel/base";//BASE
+@import "kernel/mixin";//MIXIN
+
+
+/* --------------------------------------------------
+  VARIABLE
+ -------------------------------------------------- */
+//SIZE
+$header-height:55px;
+$tab-top-height:55px;
+
+//COLOR
+$primary: rgb(23,158,153); //主色-深綠色
+$secondary: #4b913f; //輔色-淺綠色(文字用)
+$third: #179E99; //輔色-淺綠色 (按鈕)
+$success: #7ac470; //淺綠色
+$dark: #212121; //主要文字顏色
+$light: #767676; //淺灰色
+$description: #565656; //輔色-淺灰色(文字用)
+$transparent: rgba(0,0,0,0);//透明
+
+//ITEM COLOR 根據功能位置之顏色變數
+$header-bg: rgb(239,239,244);               //HEADER
+$header-line: #aac3a6;                      //HEADER-BOTTOM-BORDER
+$sidebar-bg: #292b2b;                       //SIDEBAR
+$sidebar-active-color: #8cc63f;             //SIDEBAR-ACTIVE-COLOR
+$form-input-bg:$transparent;                //INPUT BG
+$form-input-border-color:$light;            //INPUT BORDER
+$form-input-text-color:$light;              //INPUT FONT
+$form-checkbox-color:$light;                //CHECKBOX
+$form-checkbox-active-color:$success;       //CHECKBOX ACTIVE
+$other-content-bg:#efeeee;                  //SCROLLABLE GRAY BG
+
+
+
+/* --------------------------------------------------
+ PLUGINS
+ -------------------------------------------------- */
+
+@import "plugins/header";                   //HEADER
+@import "plugins/sidebar";                  //SIDEBAR
+@import "plugins/loading";                  //LOADING
+@import "plugins/form";                     //FORM
+@import "plugins/typography";               //FONTTYPE
+@import "plugins/tab";                      //TAB
+@import "plugins/checkbox";                 //CHECKBOX
+@import "plugins/btn";                      //BUTTON
+@import "plugins/list";                     //LIST
+@import "plugins/select";                   //SELECT
+@import "plugins/datatable";                //DATATABLE
+@import "plugins/panel";                    //PANEL
+@import "plugins/calendar";                 //CALENDAR
+
+/* --------------------------------------------------
+ PAGES
+ -------------------------------------------------- */
+
+@import "page/login";                       //LOGIN
+@import "page/dashboard";                   //DASHBOARD CONTROL
+@import "page/activity";                    //ACTIVITY CONTROL
+@import "page/record";                      //RECORD CONTROL
+@import "page/history";                     //HISTORY CONTROL
+@import "page/profile_detail";              //PROFILE DETAIL CONTROL
+@import "page/notify";                      //NOTIFY CONTROL
+
+@import "page/layout";  
+@import "page/cust";
+@import "page/explore";
+@import "page/custboard";
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+.app {
+    background: white;
+}
+.has-navbar-top .app-body {
+    padding-top: $header-height;
+}
+.has-navbar-bottom .app-body {
+    padding-bottom: 0;
+}
+.scrollable-content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    &.light-bg {
+        background-color: $other-content-bg;
+    }
+    &.dark-bg {
+        background-color: #ddd;
+    }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.1;
+    color: inherit;
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+p {
+    margin: 0 0 10px;
+}
+img {
+    max-width: 100%;
+    border: 0;
+    vertical-align: middle;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,29 @@
+
+.text {
+    &-white { color: white;}
+    &-dark { color: $dark;}
+    &-light { color: $light;}
+    &-primary { color: $primary;}
+    &-secondary { color: $secondary;}
+    &-description { color: $description;}
+} 
+
+.font {
+    &-normal { font-weight: normal; }
+    &-bold { font-weight: bold; }
+    &-italic { font-style: italic; }
+    &-weight200 { font-weight: 200; }
+    
+    &10 { font-size:10px; }
+    &12 { font-size:12px; }
+    &14 { font-size:14px; }
+    &16 { font-size:16px; }
+    &18 { font-size:18px; }
+    &19 { font-size:19px; }
+    &20 { font-size:20px; }
+    &23 { font-size:23px; }    
+    &24 { font-size:24px; }
+    &30 { font-size:30px; }
+    &36 { font-size:36px; }
+    &48 { font-size:48px; }
+}

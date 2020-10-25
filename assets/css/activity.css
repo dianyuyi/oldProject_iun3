@@ -1,0 +1,70 @@
+.ibox-content {
+  border-top: 1px solid #508447;
+  padding: 0px;
+  margin: 0px;
+  height: 286px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ibox-content .feed-element {
+  text-align: center;
+  border-right: 1px solid #eee;
+  margin: 12px 0;
+  padding: 0px 15px;
+}
+.ibox-content .feed-element strong {
+  font-size: 18px;
+  color: #3f3f3f;
+}
+.ibox-content .feed-element strong c {
+  font-size: 28px;
+  color: #3f3f3f;
+}
+.ibox-content .feed-element strong small {
+  line-height: 24px;
+}
+.ibox-content .feed-element .media-body {
+  height: 65px;
+  padding: 0 12px;
+}
+.ibox-content .feed-element .media-body span {
+  margin: 0px;
+}
+
+table.dataTable {
+  border-collapse: separate;
+  border-spacing: 0 11px;
+}
+table.dataTable thead {
+  font-size: 14px;
+}
+table.dataTable thead th {
+  color: #fff;
+}
+table.dataTable thead tr {
+  background: #508447;
+  border-left: 5px solid #508447;
+  border-bottom: 10px solid #fff;
+}
+table.dataTable tbody tr {
+  cursor: pointer;
+}
+table.dataTable tbody td {
+  height: 36px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+table.dataTable tbody td:first-child {
+  border-left: 5px solid #508447;
+}
+table.dataTable tbody td:last-child {
+  border-right: 1px solid #ddd;
+}
+table.dataTable tbody .btn-delete {
+  padding: 5px 15px;
+  position: relative;
+  z-index: 5;
+}
+
+/*# sourceMappingURL=activity.css.map */

@@ -1,0 +1,189 @@
+
+
+/* --------------------------------------------------
+    LOGIN STYLE
+ -------------------------------------------------- */        
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.form {
+    
+    /* --------------------------------------------------
+      VARIABLE
+     -------------------------------------------------- */        
+    $input-height:48px;//input高度
+    
+    &-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+    &-group {
+        padding: 0;
+        margin-bottom: 22px;
+        
+        input {
+            background-color: $form-input-bg;
+            border: 1px solid $form-input-border-color;
+            padding: 5px 0 5px 50px;
+            height: $input-height;
+            text-align: center;
+
+            @include placeholder {
+                color: $form-input-text-color;
+                font-weight: bold;
+            }
+            
+            &.outline {
+                @include border-radius(0);
+                border: 0;
+                border-bottom: 1px solid $form-input-border-color;
+                padding: 5px 15px 5px;
+                text-align: left;
+            }
+        }
+    }
+    //前面包含icon圖檔的組合
+    &-input-group {
+        position: absolute;
+        height: $input-height;
+        line-height: $input-height;
+        left: 29px;
+        
+        >img {
+            width: 20px;
+        }
+        &.phone {
+            left: 15px;
+            border-right: 1px solid $form-input-border-color;
+        }
+    }
+}      
+
+/* --------------------------------------------------
+    PROFILE STYLE
+ -------------------------------------------------- */  
+
+.profile-form {
+    .form {
+
+        /* --------------------------------------------------
+          VARIABLE
+         -------------------------------------------------- */        
+        $input-height:30px;//input高度
+        $title-width:140px;
+        //COLOR
+        $input-border-color:#ddd;
+        $text-color:#5a5a5a;
+        
+        &-group {
+            padding: 0;
+            margin-bottom: 20px;
+            display: flex;
+
+            //profile img
+            .photo {
+                border-radius: 100%;
+                max-height: 80px;
+                &-upload {
+                   border: 1px solid $input-border-color;
+                   border-radius: 4px;
+                }
+                &-camera{
+                   right: 0;
+                   bottom: 0; 
+                }
+            }
+            
+            //title
+            label {
+                flex: 1 0 $title-width;
+                color: $text-color;
+                margin-bottom: 0;
+                font-weight: 200;
+                padding: 7px 0 7px 40px;
+                /*line-height: $input-height;*/
+                
+/*                @media (max-width: 413px){
+                    flex:0 0 $title-width;
+                    padding-left: 0;
+                }*/
+                
+                @media (max-width: 375px){
+                    flex:1 0 100px;
+                    padding-left: 0;
+                }
+            }
+            //content
+            .flex-item {
+                flex: 1 0 200px;
+                
+                //DATATIMEPICKER
+                .bootstrap-datetimepicker-widget table {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+
+                    th.picker-switch {
+                        font-size: 20px;
+                    }
+                }
+            }
+            //input style
+            input[type="text"],select {
+                height: $input-height;
+                color: $text-color;
+                border: 1px solid $input-border-color;
+                padding: 7px 10px 5px 20px;
+                font-weight: 200;
+                text-align: left;
+
+                @include placeholder {
+                    color: $text-color;
+                    font-weight: 200;
+                }
+            }
+            .checkbox {
+                margin-top: 5px;
+                
+                input[type="checkbox"] {
+                    height: 13px;
+                    margin-top: 3px;
+                }
+            }
+            //datepicker
+            .input-group-addon{
+                &:last-child,
+                &:first-child {
+                   border: 1px solid $input-border-color;
+                   border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="url"] {
+  -webkit-appearance: none;
+}

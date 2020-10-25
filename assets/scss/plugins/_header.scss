@@ -1,0 +1,44 @@
+.navbar {
+    &-app {
+        min-height: $header-height;
+        background: $header-bg;
+        // border: 0;
+        
+        .btn {
+            line-height: unset;
+            i{
+                line-height: $header-height;
+            }
+        }
+    }
+    &-brand{
+        height: $header-height;
+        line-height: $header-height;
+        padding: 0;
+        font-size: 20px;
+    }
+    &-brand-left {
+        padding-left: 84px;
+        text-align: left;
+    }
+    //Header 右側icon
+    &-icon-right {
+        top: -2px;
+        right: 33px;
+        //Notify number
+        .notify-num {
+            background-color: #508447;
+            height: 20px;
+            width: 28px;
+            border-radius: 40px;
+            font-size: 12px;
+            bottom: -1px;
+            left: 10px;
+            line-height: 20px;
+        }
+    }
+    //要放置在 .scrollable那層使用
+    &-line {
+        border-top: 1px solid $header-line;
+    }
+}

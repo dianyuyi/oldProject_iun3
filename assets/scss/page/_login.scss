@@ -1,0 +1,77 @@
+
+.login {
+    padding: 64px 45px 0;
+    // margin-top: $tab-top-height;
+
+    &-form{
+        text-align: left;
+    }
+    &-bg {
+        // @include background-image(cover);
+        // background-image: url('../img/login/bg_login.jpg');
+        background-color: #f5f4f5;
+    }
+    &-title {
+        margin-bottom: 50px;
+
+        h1 {
+            font-size: 55px;
+            letter-spacing: 2px;
+            margin-bottom: -3px;
+        }
+    }
+    .form-group input {
+        background-color: white;
+        border: 1px solid #ECECED;
+        border-radius: 0;
+        text-align: left;
+    }
+}
+.signup {
+    padding: 64px 45px 0;
+    margin-top: $tab-top-height;
+
+    &-bg {
+        @include background-image(cover);
+        background-image: url('../img/login/bg_signup.jpg');
+    }
+}
+.forgotpw {
+    padding: 64px 45px 0;
+    /*margin-top: $tab-top-height;*/
+
+    &-bg {
+        @include background-image(cover);
+        background-image: url('../img/login/bg_forgotpw.jpg');
+    }
+}
+.social-section {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    > a > img {
+        margin: 10px 0;
+    }
+}
+.or-section {
+    margin: 43px auto 27px;
+}
+.remembered-section {
+    line-height: 30px;
+    .pull-right {
+        float: right !important;
+    }
+}
+.forgotpw-section {
+    margin: 0 0 100px 0;
+}
+
+.facebook {
+    background: #3a5891;
+}
+.google {
+    background: #de5955;
+}
+.wechat {
+    background: #77c46c;
+}

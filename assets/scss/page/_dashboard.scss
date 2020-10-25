@@ -1,0 +1,152 @@
+    
+
+/* --------------------------------------------------
+    VARIABLE 全域變數
+ -------------------------------------------------- */
+//COLOR
+$kcal-1:#ffad4a;                //orange
+$kcal-2:#77c46c;                //green
+$kcal-3:#f75cd6;                //purple
+$border-color: #ddd;            //線段色
+
+//DASHBOARD TABLE
+.dashboard {
+    /* --------------------------------------------------
+        VARIABLE 局部變數
+     -------------------------------------------------- */
+    //SIZE
+    $col-height:81px;
+
+    //COLOR
+    $bg:#fcfcfc;
+    $dark:#dbdbdb;
+
+    //URL
+    $image-location: img;       //最上層資料夾
+    $folder-location: dashboard;//類別資料夾
+    
+    /* --------------------------------------------------
+        Accordion table 折疊表格樣式
+     -------------------------------------------------- */
+    
+    //盒模型
+    .flex-box {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    //欄位設定
+    .column {
+        height: $col-height;
+        flex: 1 0 170px;
+        
+        &1 {
+            flex: 1 0 100%;
+        }
+    }
+    //Icon
+    &-icon {
+        width: 44px;
+        height: 100%;
+        padding-top: 30px;
+        display:inline-block;
+        
+        &::before{
+            @include background-image(contain);
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .icon {
+        &1::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/icon_distance.png);
+        }
+        &2::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/icon_distance.png);
+        }
+        &3::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/icon_distance.png);
+        }
+        &4::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/icon_distance.png);
+        }
+        &5::before{
+            background-image: url(../#{$image-location}/#{$folder-location}/icon_distance.png);
+        }
+    }
+    //背景色
+    &-bg {
+        &1 { background-color: #636363; }
+        &2 { background-color: #ffc50b; }
+        &3 { background-color: #975dc9; }
+        &4 { background-color: #e24949; }
+        &5 { background-color: #c42a5d; }
+    }
+    //數據內容
+    &-data {
+        min-height: 81px;
+        width: calc(100% - 44px);
+        float: right;
+        padding: 12px 0 0;
+        border-bottom:1px solid $border-color;
+        
+        &-box {
+            margin: 0 auto;
+            width: calc(100% - 30px);
+            @media only screen and (max-width:340px) {
+                width: calc(100% - 20px);
+            }
+        }
+        
+        .col-2 {
+            width: calc(100% / 2);
+        }
+        .col-5 {
+            width: calc(100% / 5);
+            @media only screen and (max-width:340px) {
+                width: calc(100% / 4);
+            }
+        }
+    }
+    
+    /* --------------------------------------------------
+        Datatable 表格樣式
+     -------------------------------------------------- */
+    
+    //背景
+    .dark-bg {
+        background: $dark;
+    }
+    .time {
+        p {
+            letter-spacing: 2px;
+            margin-bottom: -7px;
+            font-weight: 300;
+        }
+    }
+    //欄-2
+    .kcal{
+        min-width: 58px;
+    }
+}
+
+//DATATABLE STYLE MODIFY
+table.dataTable.dashboard{ 
+    border-collapse: separate;
+    border-spacing: 0 7px;
+    margin-top: -7px;
+    
+    tbody td {
+        border-color: $border-color;
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        padding: 10px 5px;
+            
+        &:first-child {
+            &.kcal-color1 { border-left: 6px solid $kcal-1;}
+            &.kcal-color2 { border-left: 6px solid $kcal-2;}
+            &.kcal-color3 { border-left: 6px solid $kcal-3;}
+        }
+    }
+}

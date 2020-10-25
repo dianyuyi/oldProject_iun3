@@ -1,0 +1,96 @@
+
+
+/* --------------------------------------------------
+    DEFAULT LIST STYLE
+ -------------------------------------------------- */
+.default{
+    // $list-height:55px;
+    $list-border: 1px solid #e0e0e0;
+    $list-color: $dark;
+    $link-color:#508447;
+    
+    &.list-group {
+        // margin-bottom: 20px;
+        padding-left: 0;
+    }
+    a.list-group-item {
+        position: relative;
+        font-family: NotoSansHant-Regular;
+        display: block;
+        height: auto;
+        // line-height: $list-height;
+        padding: 10px 20px;
+        background-color: white;
+        border-bottom: $list-border;
+        color: $list-color;
+        overflow: hidden;
+        font-size:18px;
+        
+        .name {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            color: white;
+            background-image: linear-gradient(to top, #179E99 0%, rgba(23,158,153,0.5) 100%);
+            font-size: 26px;
+            font-weight: 900;
+            border-radius: 100%;
+        }
+
+        span {
+            color: $light;
+            font-weight: 400;
+            right: 30px;
+            top: 30px;
+            font-size: 13px;
+            color: #8E8E93;
+        }
+        img {
+            margin-left: 10px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 5px;
+            text-align: left;
+            padding-left: 60px;
+            
+            + p {
+                font-size: 13px;
+                color: $light;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+/* --------------------------------------------------
+    ACTIVITY LIST STYLE
+ -------------------------------------------------- */
+.list{
+    
+    $list-height:70px;
+    $list-border: 1px solid #e0e0e0;
+    $list-color: $dark;
+    
+    a.list-group-item {
+        height: $list-height;
+        line-height: $list-height;
+        padding: 0;
+        background-color: white;
+        border-bottom: $list-border;
+        color: $list-color;
+        overflow: hidden;
+        font-family: NotoSansHant-Regular;
+        
+        &.with-btn {
+            padding: 17px 17px 17px 116px;
+            line-height: calc( #{$list-height} - 34px );
+            
+            img {
+                position: absolute;
+                height: 36px;
+                width: auto;
+                left: 15px;
+            }
+        }
+    }
+}

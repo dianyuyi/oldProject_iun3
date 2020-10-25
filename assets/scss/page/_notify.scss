@@ -1,0 +1,34 @@
+
+/* --------------------------------------------------
+    DEFAULT LIST STYLE
+ -------------------------------------------------- */
+.default.notify {
+    background-color: #fff;
+    height: 100vh;
+    
+    a.list-group-item {
+        height: auto;
+        line-height: 1;
+        font-size: 14px;
+        display: flex;
+        padding: 17px 20px 13px;
+        
+        &:first-child {
+            margin-top: 15px;
+        }
+
+        .icon {
+            flex: 0 0 50px;
+        }
+        .default.notify a.list-group-item .description {
+            flex: 1 1 205px;
+        }
+        .date {
+            flex: 0 0 77px;
+            
+            span {
+                color: #777777;
+            }
+        }
+    }
+}

@@ -1,0 +1,282 @@
+
+
+
+/* --------------------------------------------------
+    VARIABLE
+-------------------------------------------------- */
+//SIZE
+$datetime-col-width: 30px;
+$datetime-col-height: 33px;
+
+/* --------------------------------------------------
+    DATETIMEPICKER DEFAULT
+-------------------------------------------------- */
+.datetimepicker {
+    width: $datetime-col-width * 7 + 150px;
+    margin: 0 auto;
+    
+    @media only screen and (max-width:360px) {
+        margin:0 -15px;
+    }
+    @media only screen and (max-width:320px) {
+        margin:0 -15px;
+        width: 320px;
+    }
+}
+/*Default*/
+.bootstrap-datetimepicker-widget {
+    //Default circle style 
+    .default-style {
+        height: $datetime-col-height;
+        width: $datetime-col-width;
+        line-height: $datetime-col-height;
+        font-size: 16px;
+        padding: 0;
+        @include border-radius(100%);
+        /*border: 1px solid #ddd;*/
+    }
+    //active circle style 
+    .active-style {
+        background-color: #518c25;
+        color: white;
+        font-size: 18px;
+    }
+    
+    table {
+        border-collapse: separate;
+        border-spacing: 15px 5px;
+        
+        th {
+            color: #a8a8a8;
+            font-weight: 300;
+            font-size: 16px;
+            
+            &.picker-switch {
+                font-size: 35px;
+                font-weight: 200;
+                color: #848484;
+            }
+        }
+        td {
+            @extend .default-style;
+            /*DAY*/
+            &.day {
+                @extend .default-style;
+            }
+            &.today::before{
+                content: none;
+            }
+            &.active,&.active:hover {
+                @extend .active-style;
+                padding: 2px 2px 0 0px;
+            }
+            /*MONTH/YEAR*/
+            span.active {
+                @extend .active-style;
+                @include border-radius(100%);
+            }
+        }
+    } 
+}
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+    padding: 5px 0;
+}
+
+/* 小日曆-WEEK */
+.calendar-week {
+    background: #FFF;
+    
+    /* 週月年滾動選擇-修正效果 */
+    .week-wrapper {
+        position: relative;
+        width: 400px;
+        margin-top: 40px;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        .lines {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-top: solid 2px #000000;
+            border-bottom: solid 2px #000000;
+            position: absolute;
+            top: 50px!important;
+            left: 0px;
+            width: 100%;
+            height: 35px;
+            
+            div {
+                display: inline;
+                line-height: 20px;
+            }
+        }
+
+        div.drum-wrapper {
+            float: left;
+        }
+        
+        /*週月年滾動選擇-實際元素*/
+        //年
+        #drum_calories-week-year-sel {
+            width: 150px;
+            
+            .inner {
+               .drum-container {
+                    height: 35px;
+                    line-height: 35px;
+                    .drum {
+                        figure {
+                            text-align: center;
+                            font-size: 1.4em;
+                            line-height: 1.4em;
+                            height: 35px;
+                        }
+                    }
+                } 
+            }
+        }
+        //週
+        #drum_calories-week-week-sel {
+            width: 200px;
+            
+            .inner {
+               .drum-container {
+                    height: 35px;
+                    line-height: 35px;
+                    
+                    .drum {
+                        figure {
+                            text-align: center;
+                            font-size: 1.4em;
+                            line-height: 1.4em;
+                            height: 35px;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+/* 大日曆 */
+.calendar {
+    /* --------------------------------------------------
+        VARIABLE
+    -------------------------------------------------- */
+    //COLOR
+    $bar-1: #ffad4a;     //orange
+    $bar-2: #f24dff;     //pink
+    $bar-3: #77c46c;     //green
+    $bar-4: #159bff;     //orange
+    $bar-5: #00aeb2;     //dark-blue
+    //TABLE COLOR
+    $header-bg: white;
+    $header-btn-bg: white;
+    $day-th-text: #c6c6c6;
+    $day-td-text: #4f4f4f;
+    $day-td-other-text: #707070;
+    $day-td-bg: white;
+    $day-td-other-bg: #dedede;
+    $today-color: white;
+/*    $today-marker-height: 5px;
+    $today-marker-width: 50px;
+    $cell-highlight-background: #E4F1FE;*/
+    
+    //SIZE
+    $spacing: 5px;
+    $cloumn-height:86px;
+    
+    /* --------------------------------------------------
+        CALENDAR BASE STYLE
+    -------------------------------------------------- */
+    //HEADER
+    .fc-toolbar {
+        background-color: $header-bg;
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+
+        h2 { font-size: 15px; }
+        button {
+            height: auto; 
+            background: $header-btn-bg;
+            box-shadow: none;
+            border: 0;
+            color: $bar-3;
+        }
+    }
+    //TABLE MARGIN
+    .fc-unthemed {
+        table {
+            border-spacing: $spacing 0;
+            border-collapse: separate;
+        }
+        tbody, td, th {
+            border-color: transparent;
+        }
+    }
+    .fc-row {
+        .fc-bg {
+            margin-top: $spacing;
+        }
+        &:first-child {
+            .fc-bg {
+                margin-top: 0;
+            }
+        }
+    }
+    //TABLE COLUMN
+    .fc-basic-view {
+        margin-top: 10px;
+        //Column size
+        .fc-body .fc-row {
+            min-height: $cloumn-height;
+        }
+        //Day number padding
+        .fc-week-number,.fc-day-number {
+            padding: 7px 0 2px 7px;
+        }
+    }
+    //TABLE COLOR
+    .fc{
+        //Header title color style
+        &-day-header {
+            color: $day-th-text;
+        }
+        //Base column color style
+        &-day {
+            background: $day-td-bg;
+            color: $day-td-text;
+        }
+        //Other month column color style
+        &-other-month {
+            background: $day-td-other-bg;
+            color: $day-td-other-text;
+        }
+    }
+    //TODAY
+    .fc-unthemed td.fc-today {
+      background: $today-color;
+/*      position: relative;
+
+      &:not(.fc-day-top) {
+        &:before {
+          content: '';
+          background: $today-color;
+          border-radius: $today-marker-height/2;
+          position: absolute;
+          height: $today-marker-height;
+          width: $today-marker-width;
+          bottom: $today-marker-height;
+          left: 50%;
+          margin-left:-($today-marker-width/2)
+        }
+      }*/
+    }
+}

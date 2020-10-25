@@ -1,0 +1,165 @@
+
+.record {
+    /*margin-top: $tab-top-height;*/
+    //fixed date
+    .panel-heading {
+        &:not(.panel-dark){
+            position: fixed;
+            width: 100%;
+            z-index: 99;
+        }
+    }
+    //table content
+    &-group {
+        padding: 0;
+        
+        table.dataTable {
+            & tbody tr {
+                line-height: 50px;
+            }
+            & tbody td {
+                padding: 12px 12px 0px;
+                
+                img {
+                    width: 30px;
+                    margin-bottom: 12px;
+                }
+                h6 {
+                    font-size: 11px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+    //chart content
+    &-section {
+        padding: 10px 7px;
+        
+        /* --------------------------------------------------
+        /*    COLOR VARIABLE                               
+        -------------------------------------------------- */
+        $color1:#729df2;
+        $color2:#43ce34;
+        $color3:#ffc17d;
+        $color4:#729df2;
+        $color5:#ff7b7b;
+        $color6:#e05c34;
+        $color7:#ed48ff;
+        //panel modify style
+        .panel{
+            &-heading {
+                padding: 0 14px;
+            }
+            &-lg {
+                min-height: 46px;
+                line-height: 46px;
+            }
+        }
+        //before title line style
+        p.line {
+            &:before{
+                @extend .line-style;
+            }
+            &.line1:before{background-color: $color1;}
+            &.line2:before{background-color: $color2;}
+            &.line3:before{background-color: $color3;}
+            &.line4:before{background-color: $color4;}
+            &.line5:before{background-color: $color5;}
+            &.line6:before{background-color: $color6;}
+            &.line7:before{background-color: $color7;}
+        }
+        //overall panel modify style
+        .flex-box {display: flex;}
+        .flex-flow {flex-flow: row wrap;}
+        .line-style {
+            content: "";
+            width:4px;
+            height: 14px;
+            display: inline-block;
+        }
+        
+        .overall {
+            .panel{
+                &-heading {
+                    @extend .flex-box;
+                    @extend .flex-flow;
+                    padding: 16px 0 16px 14px;
+                    line-height: 30px;
+                }
+                &-title {
+                    flex: 0 0 80px;
+                }
+            }
+            &-box {
+                flex: auto;
+            }
+            &-item {
+                @extend .flex-box;
+                @extend .flex-flow;
+                flex: auto;
+            }
+            &-tag {
+                flex: 1 0 75px;
+                font-size: 9px;
+                
+                &.size1 {flex: 0 0 90px;}
+                &.size2 {flex: 1 0 85px;}
+                
+                &:before {
+                    @extend .line-style;
+                    margin-bottom: -3px;
+                    margin-right: 3px;
+                }
+                &.line1:before{background-color: $color1;}
+                &.line2:before{background-color: $color2;}
+                &.line3:before{background-color: $color3;}
+                &.line4:before{background-color: $color4;}
+                &.line5:before{background-color: $color5;}
+                &.line6:before{background-color: $color6;}
+                &.line7:before{background-color: $color7;}
+            }
+        }
+    }
+}
+//TAB COLOR STYLE
+.nav-tabs-top > li > a {
+    color: #aec1aa;
+}
+        
+/* --------------------------------------------------
+/*    HEIGHTCHART CONTROL                               
+-------------------------------------------------- */
+.chart {
+    &-panel {
+        max-width: 600px;
+        min-width: 200px;
+        margin: 0px auto;
+
+        @include rwd-(md) {
+            width: 600px;
+        }
+        @media (max-width:412px){
+            width: 382px;
+        }
+        @media (max-width:320px){
+            width: calc(306px - 15px);
+        }
+    }
+    &-svg {
+        overflow-y: hidden; 
+        height: 160px;
+
+        @include rwd-(md) {
+            height: auto;
+        }
+    }
+}
+        
+/* --------------------------------------------------
+/*    HEIGHTCHART STYLE                             
+-------------------------------------------------- */
+.highcharts-background {
+    fill: #e8e8e8;
+/*	stroke: #a4edba;
+	stroke-width: 2px;*/
+}

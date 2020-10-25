@@ -1,0 +1,160 @@
+
+.activity {
+    
+    /* --------------------------------------------------
+      URL
+     -------------------------------------------------- */
+    $image-location: img; //最上層資料夾
+    $folder-location: activity; //類別資料夾
+
+    //DURATION
+    .duration {
+        @include background-image(cover);
+        background-image: url(../#{$image-location}/#{$folder-location}/arc_top.svg);
+        background-position: bottom;
+        width: 100%;
+        height: 102px;
+        padding-top: 15px;
+        
+        span {
+           color:#dbdbdb ;
+        }
+        .bluetooth img {
+            position: absolute;
+            top: 11px;
+            right: 23px;
+        }
+    }
+    //VALUE
+    .value {
+        display: flex;
+        border-bottom:1px solid #ddd;
+        
+        div {
+            flex: 1;
+            
+            .font36 {
+                line-height: 36px;
+                margin: 17px 0 5px;
+            }
+        }
+    }
+    //SPEED/LEVEL
+    .level {
+        position:relative;
+        border-radius: 100px;
+        width: 100%;
+        height: 99px;
+        max-width: 850px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        &-box {
+            padding: 24px 36px 19px;
+        }
+        
+        &.with-border { border:1px solid $third;}
+        
+        .font {
+            &48 {
+                line-height: 40px;
+                margin: 14px 0 5px;
+            }
+        
+            &18 {
+                line-height: 16px;
+                margin-bottom: 0;
+                &::before {
+                    content:"";
+                    display: inline-block;
+                    margin-right: 10px;
+                    @include background-image(contain);
+                }
+                &.icon-level::before {
+                    width: 22px;
+                    height: 12px;
+                    background-image: url(../#{$image-location}/#{$folder-location}/icon_level.svg);;
+                }
+                &.icon-speed::before {
+                    width: 20px;
+                    height: 20px;
+                    background-image: url(../#{$image-location}/#{$folder-location}/icon_speed.svg);;
+                }
+                
+            }
+        }
+        
+        &-control {
+            content: "";
+            height: 48px;
+            width: 48px;
+            display:inline-block;
+            position: absolute;
+            top: calc(99px / 2 - 24px);
+            
+            &.plus {
+                right: 8px;
+                @include background-image(cover);
+                background-image: url(../#{$image-location}/#{$folder-location}/icon_plus.svg);
+
+            }
+            &.less {
+                left: 8px;
+                @include background-image(cover);
+                background-image: url(../#{$image-location}/#{$folder-location}/icon_minus.svg);
+
+            }
+        }
+    }
+    
+    
+    //CONTROL
+    .control {
+        @include background-image(cover);
+        background-image: url(../#{$image-location}/#{$folder-location}/arc_bottom.svg);
+        background-position: top;
+        width: 100%;
+        height: 199px;
+        position: absolute;
+        bottom: 0;
+        padding: 29px 60px 0;
+        
+        @media (max-width: 375px) { //el 2018/4/2
+            height: 150px;
+        }
+        
+        &-btn {
+            height: 101px;
+            width: 101px;
+            background-color: white;
+            border-radius: 100%;
+            position:relative;
+            display:inline-block;
+            margin:auto;
+            //img
+            &::before {
+                content:"";
+                width: 30px;
+                height: 30px;
+                display: inline-block;
+                position: absolute;
+                @include translate;
+                @include background-image(contain);
+            }
+            &.start::before {
+                background-image: url(../#{$image-location}/#{$folder-location}/icon_start.svg);
+                height: 45px;
+                width: 40px;
+                margin-left: 5px;
+            }
+            &.stop::before {
+                background-image: url(../#{$image-location}/#{$folder-location}/icon_stop.svg);
+            }
+            &.pause::before {
+                background-image: url(../#{$image-location}/#{$folder-location}/icon_pause.svg);
+                width: 24px;
+                height: 32px;
+            }
+        }
+    }
+}

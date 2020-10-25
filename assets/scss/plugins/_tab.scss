@@ -1,0 +1,87 @@
+
+/* --------------------------------------------------
+ 盒模型
+ -------------------------------------------------- */
+.display-flex {
+    display: flex;
+}
+.display-inline-flex {
+    display: inline-flex;
+}
+
+.nav-tabs {
+    
+    /* --------------------------------------------------
+      VARIABLE
+     -------------------------------------------------- */   
+    $border-color: #518c25;
+    $border-bottom-color: #dbdbdb;
+    $tab-content-bg: #518c25;
+    $tab-content-text: #518c25;
+    $tab-content-top-height: 40px;
+    
+    &-fixed {
+        position: fixed;
+        z-index: 99;
+    }
+    /*Top tab*/
+    &-top {
+        @extend .display-flex;
+        width: 100vw;
+        
+        >li {
+            flex: 1;
+            /*Default*/
+            >a {
+                height: $tab-top-height;
+                background-color: white;
+                color: $light;
+                padding: 0;
+                transition: 0.5s;
+                
+                span { line-height: $tab-top-height; }
+            }
+            /*active*/
+            &.active, &:active ,&:hover{
+                a { 
+                    border-bottom: 3px solid $primary;
+                    color: $primary;
+                }
+            }
+        }
+    }
+    
+    /*Radius style by al*/
+    &-radius {
+        @extend .display-flex;
+
+        >li {
+            flex: 1;
+            
+            > a {
+                height: $tab-content-top-height;
+                line-height: $tab-content-top-height - 2px;
+                background-color: white;
+                color: $tab-content-text;
+                padding: 0;
+                border-width: 2px 2px 2px 0;
+                border-style: solid;
+                border-color: $border-color;
+            }
+            &:first-child > a {
+                border-radius: 50px 0 0 50px;
+                border: 2px solid $border-color;
+            }
+            &:last-child > a {
+                border-radius: 0 50px 50px 0;
+            }
+            /*active*/
+            &.active {
+                a { 
+                    background: $tab-content-bg;
+                    color: white;
+                }
+            }
+        }
+    }
+}

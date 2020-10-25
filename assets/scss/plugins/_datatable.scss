@@ -1,0 +1,124 @@
+
+table.dataTable {
+    
+    /* --------------------------------------------------
+      VARIABLE
+     -------------------------------------------------- */   
+    //COLOR
+    $text-color: #212121;           //文字顏色
+    $thead-bg: #508447;             //標題背景色
+    $thead-text: #fff;              //標題文字色
+    $border-color: #ddd;            //線段色
+    $tbody-bg: #fff;                //內容背景色
+    $tbody-selected: #ddd;          //內容反黑色
+    $link: #ddd;
+    //SIZE
+    $font-size: 15px;               //文字大小
+    $thead-height: 37px;            //標題高度
+    $table-spacing: 0 4px;          //行列間空隙參數
+    $thead-text-align: center;      //標題文字對齊方向
+    $tbody-text-align: center;      //內容文字對齊方向
+    
+    
+    &,
+    & th,& td {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+    td, th {
+        padding: 0 5px;
+    }
+    
+    color: $text-color;
+    font-size: $font-size;
+    width: 100%;
+    
+    @media (max-width: 375px){
+        line-height: 20px;
+    }
+    
+    thead {
+        tr {
+            background-color: $thead-bg;
+            border: 1px solid $border-color;
+            cursor:pointer;
+            
+            th {
+                color: $thead-text;
+                font-size: $font-size;
+                text-align: $thead-text-align;
+                height: $thead-height;
+                line-height: $thead-height;
+                border-bottom: 1px solid $border-color;
+                font-weight: 200;
+                
+                //客製化參數
+                //letter-spacing: 1px;
+                //padding: 0;
+            }
+            
+            //客製化參數：標題第一格&最後一格加padding
+            //th:first-child {
+            //    padding:5px 0 5px 5px;
+            //}
+            //th:last-child {
+            //    padding:5px 5px 5px 0;
+            //}
+        }
+    }
+    tbody {
+        tr {
+            background-color: $tbody-bg;
+            font-size: $font-size;
+            // border-bottom: 1px solid $border-color;
+
+            &.selected {
+                background-color: $tbody-selected;
+            }
+        }
+        td {
+            padding: 0;
+            
+            a.link {
+                color: $link;
+            }
+        }
+    }
+    tfoot {
+        height: 60px;
+        
+        tr {
+            padding: 8px 10px;
+            
+            a {
+                background-color: #009944;
+                padding: 10px 6px 10px 16px;
+            }
+        }
+    }
+    
+    /* --------------------------------------------------
+        行列間空隙參數
+     -------------------------------------------------- */   
+    &.separate {
+        //行列間空隙參數
+        border-collapse: separate;
+        border-spacing: $table-spacing;
+        //把table上方空隙負回去
+        margin-top: -4px;
+        
+        tbody {
+            tr {
+                //若使用border-collapse: separate參數，則此線段參數無用、要加在<td>tag上
+                //border-bottom: 1px solid $border-color;
+            }
+            td {
+                border-color: $border-color;
+                border-width: 1px 0 1px 0;
+                border-style: solid;
+                padding: 15px 10px;
+            }
+        }
+    }
+}

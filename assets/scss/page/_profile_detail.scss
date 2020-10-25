@@ -1,0 +1,84 @@
+
+/* --------------------------------------------------
+    PROFILE STYLE
+ -------------------------------------------------- */  
+
+.profile-form .form {
+    
+    /* --------------------------------------------------
+      VARIABLE
+     -------------------------------------------------- */        
+    $input-height:30px;//input高度
+
+    &-group {
+        //HR Zone
+        &.hr { 
+            margin-bottom: 0;
+            //HRZONE LIST
+            label {
+                padding: 0 0 0 40px;
+                @media (max-width: 375px){
+                    padding-left: 0;
+                }
+            }
+        }
+        .hr {
+            &-item {
+
+                input {
+                    padding: 5px;
+                    width: 45px;
+                    padding: 5px;
+                    text-align: center;
+                    
+                    &:first-child{
+                    @include rwd-(md) {
+                        float: right;
+                    }}
+                }
+                .dash {
+                    position: absolute;
+                    right: -4px;
+                    top: 5px;
+                }
+            }
+
+            //POINT STYLE
+            &-point{
+                &:before {
+                    content: "";
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 100%;
+                    margin-right: 10px;
+                    display: inline-block;
+                }
+                //point color style
+                &.peak:before { background-color: #fc0d1b; }
+                &.hard:before { background-color: #fd8023; }
+                &.cardio:before { background-color: #fedf32; }
+                &.fat:before { background-color: #21d529; }
+                &.easy:before { background-color: #1a9dec; }
+            }
+        }
+    }
+}
+
+/* --------------------------------------------------
+    HRZONE TABLE
+ -------------------------------------------------- */  
+
+table.dataTable.hrzoneTable {
+    border-collapse:separate;
+    thead tr {
+        background-color: #292929;
+    }
+    tbody td {
+        padding: 10px 5px;
+    }
+    .peak {border-left: 15px solid #fc0d1b; }
+    .hard {border-left: 15px solid #fd8023; }
+    .cardio {border-left: 15px solid #fedf32; }
+    .fat {border-left: 15px solid #21d529; }
+    .easy {border-left: 15px solid #1a9dec; }
+}
